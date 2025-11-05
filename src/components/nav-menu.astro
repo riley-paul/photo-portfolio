@@ -19,10 +19,12 @@ const links = await getLinks();
 
       return (
         <div class="dropdown dropdown-hover">
-          <div tabindex="0" role="button" class="btn btn-ghost">
-            {name}
-            <ChevronDownIcon className="size-4" />
-          </div>
+          <a href={link}>
+            <div tabindex="0" role="button" class="btn btn-ghost">
+              {name}
+              <ChevronDownIcon className="size-4" />
+            </div>
+          </a>
           <ul
             tabindex="-1"
             class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow"
