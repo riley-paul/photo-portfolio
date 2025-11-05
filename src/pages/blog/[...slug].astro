@@ -1,5 +1,4 @@
 ---
-import { buttonVariants } from "@/components/ui/button";
 import RootLayout from "@/layouts/root-layout.astro";
 import formatDate from "@/lib/formatDate";
 import { getCollection } from "astro:content";
@@ -25,11 +24,7 @@ const { Content } = await entry.render();
     <Content />
   </div>
   <br />
-  <a
-    slot="footer-button"
-    href="/blog"
-    class={buttonVariants({ variant: "secondary" })}
-  >
+  <a slot="footer-button" href="/blog" class="btn btn-secondary btn-soft">
     Return to Blog
   </a>
 </RootLayout>

@@ -71,9 +71,7 @@ export default function Gallery(props: Props) {
       {modalOpen && (
         <div
           className="fixed top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center bg-gray-600/90"
-          onClick={(e) => {
-            closeModal();
-          }}
+          onClick={closeModal}
         >
           <img
             className="h-full w-auto object-contain"

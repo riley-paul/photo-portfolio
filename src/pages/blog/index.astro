@@ -3,20 +3,12 @@ import { getCollection } from "astro:content";
 import formatDate from "@/lib/formatDate";
 const blogs = await getCollection("blog");
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { Image } from "astro:assets";
 import RootLayout from "@/layouts/root-layout.astro";
 ---
 
 <RootLayout title="Blog">
-  <div class="flex flex-col divide-y">
+  <div class="flex flex-col divide-y divide-base-300">
     {
       blogs
         .filter((blog) => !blog.data.draft)
@@ -25,8 +17,8 @@ import RootLayout from "@/layouts/root-layout.astro";
             <a href={`/blog/${blog.slug}`} class="flex gap-2">
               <Image height={80} src={blog.data.cover} alt="cover photo" />
               <div class="flex flex-col">
-                <CardTitle>{blog.data.title}</CardTitle>
-                <CardDescription>{formatDate(blog.data.date)}</CardDescription>
+                <h3 class="font-bold">{blog.data.title}</h3>
+                <p class="text-sm opacity-50">{formatDate(blog.data.date)}</p>
               </div>
             </a>
           </div>
