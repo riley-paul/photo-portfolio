@@ -27,7 +27,7 @@ export const NavMenu: React.FC<Props> = ({ pathname, links }) => {
               <>
                 <NavigationMenuTrigger
                   className={cn(
-                    link.active(pathname) && "text-primary font-bold",
+                    // link.active(pathname) && "text-primary font-bold",
                     "hover:text-primary",
                   )}
                 >
@@ -45,8 +45,8 @@ export const NavMenu: React.FC<Props> = ({ pathname, links }) => {
                             className={cn(
                               navigationMenuTriggerStyle(),
                               "h-auto w-full justify-start",
-                              child.active(pathname) &&
-                                "text-primary font-bold",
+                              // child.active(pathname) &&
+                                // "text-primary font-bold",
                             )}
                           >
                             {child.icon && (
@@ -65,7 +65,7 @@ export const NavMenu: React.FC<Props> = ({ pathname, links }) => {
                 <NavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    link.active(pathname) && "text-primary font-bold",
+                    // link.active(pathname) && "text-primary font-bold",
                     "hover:text-primary",
                   )}
                 >

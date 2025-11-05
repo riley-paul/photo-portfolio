@@ -1,0 +1,45 @@
+---
+import { getLinks } from "@/lib/helpers";
+import { cn } from "@/lib/utils";
+import { ChevronDownIcon } from "@radix-ui/react-icons";
+
+const links = await getLinks();
+---
+
+<div class="flex gap-1">
+  {
+    links.map(({ children, name, link }) => {
+      if (!children) {
+        return (
+          <a href={link} class="btn btn-ghost">
+            {name}
+          </a>
+        );
+      }
+
+      return (
+        <div class="dropdown dropdown-hover">
+          <div tabindex="0" role="button" class="btn btn-ghost">
+            {name}
+            <ChevronDownIcon className="size-4" />
+          </div>
+          <ul
+            tabindex="-1"
+            class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow"
+          >
+            {children.map((child) => (
+              <li>
+                <a
+                  class={cn(child.active(Astro.url.pathname) && "menu-active")}
+                  href={child.link}
+                >
+                  {child.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+    })
+  }
+</div>
