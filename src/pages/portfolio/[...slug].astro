@@ -1,8 +1,8 @@
 ---
-import Layout from "@/layouts/Layout.astro";
 import Gallery from "../../components/Gallery.jsx";
 import getAlbums from "@/lib/getAlbums";
 import { buttonVariants } from "@/components/ui/button";
+import RootLayout from "@/layouts/root-layout.astro";
 
 export async function getStaticPaths() {
   const albums = await getAlbums();
@@ -15,7 +15,7 @@ export async function getStaticPaths() {
 const { album } = Astro.props;
 ---
 
-<Layout title={album.data.name}>
+<RootLayout title={album.data.name}>
   <h2
     class="text-lg font-bold w-full pb-2 text-primary text-center border-b my-6"
   >
@@ -30,4 +30,4 @@ const { album } = Astro.props;
   >
     Return to Portfolio
   </a>
-</Layout>
+</RootLayout>

@@ -1,10 +1,10 @@
 ---
-import Layout from "@/layouts/Layout.astro";
+import RootLayout from "@/layouts/root-layout.astro";
 import getAlbums from "@/lib/getAlbums.js";
 const albums = await getAlbums();
 ---
 
-<Layout title="Portfolio">
+<RootLayout title="Portfolio">
   <div class="columns-sm">
     {
       albums.map((album) => (
@@ -24,4 +24,4 @@ const albums = await getAlbums();
       ))
     }
   </div>
-</Layout>
+</RootLayout>

@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import Layout from "@/layouts/Layout.astro";
 import formatDate from "@/lib/formatDate";
 const blogs = await getCollection("blog");
 
@@ -13,9 +12,10 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Image } from "astro:assets";
+import RootLayout from "@/layouts/root-layout.astro";
 ---
 
-<Layout title="Blog">
+<RootLayout title="Blog">
   <div class="flex flex-col divide-y">
     {
       blogs
@@ -33,4 +33,4 @@ import { Image } from "astro:assets";
         ))
     }
   </div>
-</Layout>
+</RootLayout>
