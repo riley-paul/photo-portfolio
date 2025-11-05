@@ -8,10 +8,16 @@ const links = await getLinks();
 
 <div class="flex gap-1">
   {
-    links.map(({ children, name, link }) => {
+    links.map(({ children, name, link, active }) => {
       if (!children) {
         return (
-          <a href={link} class="btn btn-ghost">
+          <a
+            href={link}
+            class={cn(
+              "btn btn-ghost opacity-50",
+              active(Astro.url.pathname) && "opacity-100",
+            )}
+          >
             {name}
           </a>
         );
@@ -20,7 +26,14 @@ const links = await getLinks();
       return (
         <div class="dropdown dropdown-hover">
           <a href={link}>
-            <div tabindex="0" role="button" class="btn btn-ghost">
+            <div
+              tabindex="0"
+              role="button"
+              class={cn(
+                "btn btn-ghost opacity-50",
+                active(Astro.url.pathname) && "opacity-100",
+              )}
+            >
               {name}
               <ChevronDownIcon className="size-4" />
             </div>
