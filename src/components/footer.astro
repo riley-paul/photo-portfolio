@@ -1,7 +1,5 @@
 ---
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "./ui/button";
-import { contacts } from "@/config/contact";
+import { contacts } from "@/lib/config";
 ---
 
 <div
@@ -18,17 +16,14 @@ import { contacts } from "@/config/contact";
             href={i.link}
             target="_blank"
             rel="noopener noreferrer"
-            class={cn(
-              buttonVariants({ variant: "link", size: "sm" }),
-              "px-2 text-muted-foreground"
-            )}
+            class="btn btn-link btn-sm link-hover underline-offset-4 font-normal"
           >
             {i.name}
           </a>
         ))
       }
     </div>
-    <div class="text-muted-foreground text-xs font-thin">
+    <div class="text-xs font-thin">
       &copy; {new Date().getFullYear()} Riley Paul
     </div>
   </div>

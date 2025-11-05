@@ -1,7 +1,6 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { buttonVariants } from "@/components/ui/button";
-import formatDate from "@/lib/formatDate";
+import RootLayout from "@/layouts/root-layout.astro";
+import { formatDate } from "@/lib/utils";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -16,7 +15,7 @@ const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Layout title={entry.data.title}>
+<RootLayout title={entry.data.title}>
   <div class="prose mx-auto max-w-none">
     <div class="py-10">
       <h1 class="mb-0">{entry.data.title}</h1>
@@ -25,11 +24,7 @@ const { Content } = await entry.render();
     <Content />
   </div>
   <br />
-  <a
-    slot="footer-button"
-    href="/blog"
-    class={buttonVariants({ variant: "secondary" })}
-  >
+  <a slot="footer-button" href="/blog" class="btn btn-secondary btn-soft">
     Return to Blog
   </a>
-</Layout>
+</RootLayout>
