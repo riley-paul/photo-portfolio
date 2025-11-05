@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Button, buttonVariants } from "./ui/button";
 
 import { Menu, X } from "lucide-react";
-import { NavMenu } from "./NavMenu";
+// import { NavMenu } from "./NavMenu";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -47,7 +47,7 @@ export default function Navbar({ pathname = "" }: Props) {
         </div>
 
         <div className={cn("hidden md:block", isOpen && "block")}>
-          <NavMenu pathname={pathname} />
+          {/*<NavMenu pathname={pathname} />*/}
         </div>
       </div>
     </header>

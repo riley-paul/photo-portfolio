@@ -32,7 +32,7 @@ import Footer from "../components/Footer.astro";
     <title>{"Riley Paul" + (title ? ` - ${title}` : "")}</title>
   </head>
   <body data-theme="lofi">
-    <!-- <Navbar client:load pathname={Astro.url.pathname} /> -->
+    <Navbar client:load pathname={Astro.url.pathname} />
     <main class="py-4 container2">
       <slot />
 
