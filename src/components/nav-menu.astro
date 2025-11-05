@@ -14,7 +14,7 @@ const links = await getLinks();
           <a
             href={link}
             class={cn(
-              "btn btn-ghost opacity-50",
+              "btn btn-ghost opacity-50 font-normal sm:btn-md btn-sm",
               active(Astro.url.pathname) && "opacity-100",
             )}
           >
@@ -25,19 +25,17 @@ const links = await getLinks();
 
       return (
         <div class="dropdown dropdown-hover">
-          <a href={link}>
-            <div
-              tabindex="0"
-              role="button"
-              class={cn(
-                "btn btn-ghost opacity-50",
-                active(Astro.url.pathname) && "opacity-100",
-              )}
-            >
-              {name}
-              <ChevronDownIcon className="size-4" />
-            </div>
-          </a>
+          <div
+            tabindex="0"
+            role="button"
+            class={cn(
+              "btn btn-ghost opacity-50 font-normal sm:btn-md btn-sm",
+              active(Astro.url.pathname) && "opacity-100",
+            )}
+          >
+            {name}
+            <ChevronDownIcon className="size-4" />
+          </div>
           <ul
             tabindex="-1"
             class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow"
