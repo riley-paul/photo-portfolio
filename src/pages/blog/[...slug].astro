@@ -1,6 +1,6 @@
 ---
 import RootLayout from "@/layouts/root-layout.astro";
-import formatDate from "@/lib/formatDate";
+import { formatDate } from "@/lib/utils";
 import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {

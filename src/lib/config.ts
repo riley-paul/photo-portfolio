@@ -1,10 +1,5 @@
-import { AtSign, Facebook, Instagram, type LucideIcon } from "lucide-react";
-
-export interface Contact {
-  name: string;
-  link: string;
-  icon: LucideIcon;
-}
+import { AtSign, Facebook, Instagram } from "lucide-react";
+import type { Contact } from "./types";
 
 export const contacts: Contact[] = [
   {

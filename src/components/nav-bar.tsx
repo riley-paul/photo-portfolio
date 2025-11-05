@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { Button, buttonVariants } from "./ui/button";
+import { Button } from "./ui/button";
 
 import { Menu, X } from "lucide-react";
-// import { NavMenu } from "./NavMenu";
 import { cn } from "@/lib/utils";
+import type { Link } from "@/lib/types";
+import { NavMenu } from "./nav-menu";
 
-interface Props {
+type Props = {
   pathname: string;
-}
+  links: Link[];
+};
 
-export default function Navbar({ pathname = "" }: Props) {
+const Navbar: React.FC<Props> = ({ pathname, links }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const collapse = (event: KeyboardEvent) => {
@@ -47,9 +49,11 @@ export default function Navbar({ pathname = "" }: Props) {
         </div>
 
         <div className={cn("hidden md:block", isOpen && "block")}>
-          {/*<NavMenu pathname={pathname} />*/}
+          <NavMenu pathname={pathname} links={links} />
         </div>
       </div>
     </header>
   );
-}
+};
+
+export default Navbar;

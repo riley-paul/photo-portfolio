@@ -1,8 +1,8 @@
 ---
 import Gallery from "../../components/Gallery.jsx";
-import getAlbums from "@/lib/getAlbums";
 import { buttonVariants } from "@/components/ui/button";
 import RootLayout from "@/layouts/root-layout.astro";
+import { getAlbums } from "@/lib/helpers";
 
 export async function getStaticPaths() {
   const albums = await getAlbums();

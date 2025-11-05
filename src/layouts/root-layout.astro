@@ -9,6 +9,9 @@ const { title } = Astro.props;
 
 import Navbar from "@/components/nav-bar";
 import Footer from "@/components/footer.astro";
+import { getLinks } from "@/lib/helpers";
+
+const links = await getLinks();
 ---
 
 <!doctype html>
@@ -25,7 +28,7 @@ import Footer from "@/components/footer.astro";
     <title>{"Riley Paul" + (title ? ` - ${title}` : "")}</title>
   </head>
   <body>
-    <Navbar client:load pathname={Astro.url.pathname} />
+    <Navbar client:load pathname={Astro.url.pathname} links={links} />
     <main class="py-4 container2">
       <slot />
 

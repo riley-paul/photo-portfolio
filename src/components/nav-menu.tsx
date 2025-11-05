@@ -1,26 +1,23 @@
-import { links, type Link } from "@/config/links";
 import React from "react";
 
 import {
   NavigationMenu,
   NavigationMenuContent,
-  NavigationMenuIndicator,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  NavigationMenuViewport,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import type { Link } from "@/lib/types";
 
 interface Props {
   pathname: string;
+  links: Link[];
 }
 
-export const NavMenu: React.FC<Props> = (props) => {
-  const { pathname } = props;
-
+export const NavMenu: React.FC<Props> = ({ pathname, links }) => {
   return (
     <NavigationMenu>
       <NavigationMenuList className="flex-wrap justify-normal">
@@ -30,12 +27,12 @@ export const NavMenu: React.FC<Props> = (props) => {
               <>
                 <NavigationMenuTrigger
                   className={cn(
-                    link.active(pathname) && "font-bold text-primary",
-                    "hover:text-primary"
+                    link.active(pathname) && "text-primary font-bold",
+                    "hover:text-primary",
                   )}
                 >
                   {link.icon && (
-                    <link.icon className="w-4 h-4 mr-3 text-secondary-foreground" />
+                    <link.icon className="text-secondary-foreground mr-3 h-4 w-4" />
                   )}
                   {link.name}
                 </NavigationMenuTrigger>
@@ -47,12 +44,13 @@ export const NavMenu: React.FC<Props> = (props) => {
                           <NavigationMenuLink
                             className={cn(
                               navigationMenuTriggerStyle(),
-                              "w-full justify-start h-auto",
-                              child.active(pathname) && "font-bold text-primary"
+                              "h-auto w-full justify-start",
+                              child.active(pathname) &&
+                                "text-primary font-bold",
                             )}
                           >
                             {child.icon && (
-                              <child.icon className="w-4 h-4 mr-3 text-secondary-foreground" />
+                              <child.icon className="text-secondary-foreground mr-3 h-4 w-4" />
                             )}
                             {child.name}
                           </NavigationMenuLink>
@@ -67,12 +65,12 @@ export const NavMenu: React.FC<Props> = (props) => {
                 <NavigationMenuLink
                   className={cn(
                     navigationMenuTriggerStyle(),
-                    link.active(pathname) && "font-bold text-primary",
+                    link.active(pathname) && "text-primary font-bold",
                     "hover:text-primary",
                   )}
                 >
                   {link.icon && (
-                    <link.icon className="w-4 h-4 mr-3 text-secondary-foreground" />
+                    <link.icon className="text-secondary-foreground mr-3 h-4 w-4" />
                   )}
                   {link.name}
                 </NavigationMenuLink>

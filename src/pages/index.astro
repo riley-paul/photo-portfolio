@@ -1,6 +1,6 @@
 ---
 import RootLayout from "@/layouts/root-layout.astro";
-import getAlbums from "@/lib/getAlbums.js";
+import { getAlbums } from "@/lib/helpers";
 const albums = await getAlbums();
 ---
 
