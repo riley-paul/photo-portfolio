@@ -1,6 +1,5 @@
 import { getCollection } from "astro:content";
 import type { Album, Link } from "./types";
-import { contacts } from "./config";
 
 export async function getAlbums(): Promise<Album[]> {
   const albumData = await getCollection("albums");
@@ -61,10 +60,6 @@ export async function getLinks(): Promise<Link[]> {
       name: "Contact",
       link: "/contact",
       active: () => false,
-      children: contacts.map((contact) => ({
-        ...contact,
-        active: () => false,
-      })),
     },
     {
       name: "About",
