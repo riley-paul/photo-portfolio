@@ -24,14 +24,14 @@ export default function Navbar({ pathname = "" }: Props) {
   return (
     <header
       className={cn(
-        "w-full z-50 sticky top-0 bg-base-100",
-        isOpen && "pb-4 md:pb-0"
+        "bg-base-100 sticky top-0 z-50 w-full shadow-lg",
+        isOpen && "pb-4 md:pb-0",
       )}
     >
-      <div className="container2 flex justify-between md:items-center flex-col md:flex-row">
-        <div className="flex items-center z-40 justify-between">
+      <div className="container2 flex flex-col justify-between md:flex-row md:items-center">
+        <div className="z-40 flex items-center justify-between">
           <a id="logo" href="/" className="flex items-center gap-2">
-            <div className="w-10 h-16 flex items-center">
+            <div className="flex h-16 w-10 items-center">
               <img className="h-auto w-auto" src="/favicon.png" alt="logo" />
             </div>
             Riley Paul

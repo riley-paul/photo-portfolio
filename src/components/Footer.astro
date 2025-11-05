@@ -1,6 +1,4 @@
 ---
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "./ui/button";
 import { contacts } from "@/config/contact";
 ---
 
@@ -18,14 +16,14 @@ import { contacts } from "@/config/contact";
             href={i.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-link link-hover underline-offset-4 opacity-50 font-thin"
+            class="btn btn-link link-hover underline-offset-4 font-normal"
           >
             {i.name}
           </a>
         ))
       }
     </div>
-    <div class="text-muted-foreground text-xs font-thin">
+    <div class="text-xs font-thin">
       &copy; {new Date().getFullYear()} Riley Paul
     </div>
   </div>
