@@ -2,6 +2,10 @@
 @plugin "daisyui";
 @plugin "@tailwindcss/typography";
 
+@theme {
+  --font-sans: "Montserrat Variable", sans-serif;
+}
+
 @plugin "daisyui/theme" {
   name: "lofi";
   default: true;
