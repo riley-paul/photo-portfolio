@@ -1,11 +1,12 @@
 ---
+import "@/global.css";
+
 export interface Props {
   title?: string;
 }
 
 const { title } = Astro.props;
 
-import "@/main.css";
 import Navbar from "../components/Navbar.jsx";
 import Footer from "../components/Footer.astro";
 ---
@@ -31,7 +32,7 @@ import Footer from "../components/Footer.astro";
     <title>{"Riley Paul" + (title ? ` - ${title}` : "")}</title>
   </head>
   <body class="">
-    <Navbar client:load pathname={Astro.url.pathname} />
+    <!-- <Navbar client:load pathname={Astro.url.pathname} /> -->
     <main class="py-4 container">
       <slot />
 
