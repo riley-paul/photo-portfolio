@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeftIcon, ChevronRightIcon, XIcon } from "lucide-react";
 
 export type Props = {
   images: string[];
@@ -71,52 +70,48 @@ export default function Gallery(props: Props) {
 
       {modalOpen && (
         <div
-          className="fixed top-0 right-0 left-0 bottom-0 z-50 bg-gray-600/90 flex items-center justify-center"
+          className="fixed top-0 right-0 bottom-0 left-0 z-50 flex items-center justify-center bg-gray-600/90"
           onClick={(e) => {
             closeModal();
           }}
         >
           <img
-            className="object-contain h-full w-auto"
+            className="h-full w-auto object-contain"
             src={images[modalIndex]}
             alt={name}
             onClick={stopPrevent}
             onKeyDown={stopPrevent}
           />
 
-          <Button
-            variant="ghost"
-            className="fixed right-0 text-muted hover:bg-muted/30 hover:text-background h-full sm:h-1/3 sm:w-16 w-32 rounded-r-none"
+          <button
+            className="btn btn-ghost fixed right-0 h-full w-32 rounded-r-none sm:h-1/3 sm:w-16"
             onClick={(e) => {
               moveRight();
               stopPrevent(e);
             }}
           >
-            <ChevronRight size="1.5rem" className="hidden sm:block" />
-          </Button>
+            <ChevronRightIcon size="1.5rem" className="hidden sm:block" />
+          </button>
 
-          <Button
-            variant="ghost"
-            className="fixed left-0 text-muted hover:bg-muted/30 hover:text-background h-full sm:h-1/3 sm:w-16 w-32 rounded-l-none"
+          <button
+            className="btn btn-ghost fixed left-0 h-full w-32 rounded-l-none sm:h-1/3 sm:w-16"
             onClick={(e) => {
               e.stopPropagation();
               moveLeft();
             }}
           >
-            <ChevronLeft size="1.5rem" className="hidden sm:block" />
-          </Button>
+            <ChevronLeftIcon size="1.5rem" className="hidden sm:block" />
+          </button>
 
-          <Button
+          <button
             onClick={(e) => {
               stopPrevent(e);
               closeModal();
             }}
-            variant="ghost"
-            size="icon"
-            className="text-muted hover:bg-muted/30 hover:text-background fixed top-0 right-0 mt-4 mr-4"
+            className="btn btn-ghost btn-circle fixed top-0 right-0 mt-4 mr-4"
           >
-            <X size="1.2rem" />
-          </Button>
+            <XIcon size="1.2rem" />
+          </button>
         </div>
       )}
     </>
