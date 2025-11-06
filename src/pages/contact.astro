@@ -13,7 +13,7 @@ import { contacts } from "@/lib/config";
     <ContactForm />
   </div>
   <div class="divider">or</div>
-  <section class="grid grid-cols-3 gap-3">
+  <section class="grid grid-cols-1 sm:grid-cols-3 gap-3">
     {
       contacts.map(({ link, name, icon: Icon }) => (
         <a

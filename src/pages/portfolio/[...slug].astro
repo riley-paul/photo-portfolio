@@ -21,7 +21,7 @@ const { album } = Astro.props;
   </MarkdownLayout>
   <Gallery images={album.photos} name={album.data.name} client:load />
   <br />
-  <a href="/" slot="footer-button" class="btn btn-secondary">
+  <a href="/" slot="footer-button" class="btn btn-primary">
     Return to Portfolio
   </a>
 </RootLayout>

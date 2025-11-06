@@ -19,13 +19,13 @@ const { Content } = await entry.render();
 <RootLayout title={entry.data.title}>
   <MarkdownLayout>
     <div class="pb-10">
-      <h1 class="mb-0">{entry.data.title}</h1>
+      <h2 class="mb-0">{entry.data.title}</h2>
       <span>{formatDate(entry.data.date)}</span>
     </div>
     <Content />
   </MarkdownLayout>
   <br />
-  <a slot="footer-button" href="/blog" class="btn btn-secondary btn-soft">
+  <a slot="footer-button" href="/blog" class="btn btn-primary">
     Return to Blog
   </a>
 </RootLayout>

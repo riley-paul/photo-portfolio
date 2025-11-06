@@ -14,8 +14,8 @@ const links = await getLinks();
           <a
             href={link}
             class={cn(
-              "btn btn-ghost opacity-50 font-normal sm:btn-md btn-sm",
-              active(Astro.url.pathname) && "opacity-100",
+              "btn btn-ghost font-normal text-base-content/60 sm:btn-md btn-sm",
+              active(Astro.url.pathname) && "text-base-content",
             )}
           >
             {name}
@@ -29,8 +29,8 @@ const links = await getLinks();
             tabindex="0"
             role="button"
             class={cn(
-              "btn btn-ghost opacity-50 font-normal sm:btn-md btn-sm",
-              active(Astro.url.pathname) && "opacity-100",
+              "btn btn-ghost font-normal text-base-content/60 sm:btn-md btn-sm",
+              active(Astro.url.pathname) && "text-base-content",
             )}
           >
             {name}
@@ -38,12 +38,15 @@ const links = await getLinks();
           </div>
           <ul
             tabindex="-1"
-            class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow"
+            class="dropdown-content menu bg-base-100 rounded-box z-1 w-52 p-2 shadow text-base-content/60"
           >
             {children.map((child) => (
               <li>
                 <a
-                  class={cn(child.active(Astro.url.pathname) && "menu-active")}
+                  class={cn(
+                    "[--menu-active-bg:bg-base-100] [--menu-active-fg:var(--color-base-content)]",
+                    child.active(Astro.url.pathname) && "menu-active",
+                  )}
                   href={child.link}
                 >
                   {child.name}
