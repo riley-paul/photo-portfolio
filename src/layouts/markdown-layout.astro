@@ -1,11 +1,18 @@
 ---
-import RootLayout from "./root-layout.astro";
+import { cn } from "@/lib/utils";
+
+export interface Props {
+  smallImages?: boolean;
+}
+
+const { smallImages } = Astro.props;
 ---
 
-<RootLayout>
-  <div
-    class="prose mx-auto max-w-none prose-img:max-w-sm prose-img:mx-auto prose-img:rounded-lg"
-  >
-    <slot />
-  </div>
-</RootLayout>
+<div
+  class={cn(
+    "prose mx-auto max-w-none prose-img:mx-auto prose-img:rounded-lg w-full",
+    smallImages && "prose-img:max-w-sm prose-img:md:max-w-md",
+  )}
+>
+  <slot />
+</div>

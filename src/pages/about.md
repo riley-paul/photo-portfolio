@@ -1,5 +1,5 @@
 ---
-layout: ../layouts/markdown-layout.astro
+layout: ../layouts/root-markdown-layout.astro
 title: About
 ---
 

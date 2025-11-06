@@ -59,7 +59,7 @@ export async function getLinks(): Promise<Link[]> {
     {
       name: "Contact",
       link: "/contact",
-      active: () => false,
+      active: (pathname) => pathname.startsWith("/contact"),
     },
     {
       name: "About",

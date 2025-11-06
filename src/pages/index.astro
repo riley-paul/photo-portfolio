@@ -9,7 +9,7 @@ const albums = await getAlbums();
   <div class="columns-sm">
     {
       albums.map((album) => (
-        <figure class="shadow-lg relative inline-block mb-3 ">
+        <figure class="shadow-lg relative break-inside-avoid mb-4">
           <a href={`/portfolio/${album.data.slug}`}>
             <img
               class="block h-auto rounded"

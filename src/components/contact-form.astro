@@ -1,0 +1,26 @@
+<form
+  action="https://contact-me-api.pages.dev/contact"
+  method="POST"
+  class="grid gap-4 w-full"
+>
+  <input
+    type="hidden"
+    name="access_key"
+    value="b04575df-6ca6-4923-ab46-ce13d5f16845"
+  />
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Name</legend>
+    <input type="text" class="input w-full" name="name" required />
+  </fieldset>
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Email</legend>
+    <input type="email" name="email" class="input w-full" required />
+  </fieldset>
+  <fieldset class="fieldset">
+    <legend class="fieldset-legend">Message</legend>
+    <textarea name="message" class="textarea w-full" required></textarea>
+  </fieldset>
+  <footer class="flex justify-end">
+    <button class="btn btn-primary" type="submit">Submit Form</button>
+  </footer>
+</form>

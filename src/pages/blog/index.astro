@@ -5,10 +5,15 @@ const blogs = await getCollection("blog");
 import { Image } from "astro:assets";
 import RootLayout from "@/layouts/root-layout.astro";
 import { formatDate } from "@/lib/utils";
+import MarkdownLayout from "@/layouts/markdown-layout.astro";
 ---
 
 <RootLayout title="Blog">
-  <div class="flex flex-col divide-y divide-base-300">
+  <MarkdownLayout>
+    <h2>Blog</h2>
+  </MarkdownLayout>
+
+  <div class="flex flex-col divide-y divide-base-300 w-full">
     {
       blogs
         .filter((blog) => !blog.data.draft)
