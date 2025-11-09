@@ -23,10 +23,16 @@ const NavMenu: React.FC<Props> = ({ links }) => {
           if (link.children)
             return (
               <NavigationMenuItem key={link.link}>
-                <NavigationMenuTrigger>{link.name}</NavigationMenuTrigger>
+                <NavigationMenuTrigger active={link.active}>
+                  {link.name}
+                </NavigationMenuTrigger>
                 <NavigationMenuContent>
                   {link.children.map((child) => (
-                    <NavigationMenuLink className="min-w-52" asChild>
+                    <NavigationMenuLink
+                      active={child.active}
+                      className="min-w-52"
+                      asChild
+                    >
                       <a href={child.link}>{child.name}</a>
                     </NavigationMenuLink>
                   ))}
@@ -37,8 +43,9 @@ const NavMenu: React.FC<Props> = ({ links }) => {
           return (
             <NavigationMenuItem key={link.link}>
               <NavigationMenuLink
+                active={link.active}
+                className={navigationMenuTriggerStyle({ active: link.active })}
                 asChild
-                className={navigationMenuTriggerStyle()}
               >
                 <a href={link.link}>{link.name}</a>
               </NavigationMenuLink>
