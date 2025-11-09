@@ -11,7 +11,7 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
-import React from "react";
+import React, { createElement } from "react";
 
 type Props = { links: Link[] };
 
@@ -29,11 +29,15 @@ const NavMenu: React.FC<Props> = ({ links }) => {
                 <NavigationMenuContent>
                   {link.children.map((child) => (
                     <NavigationMenuLink
+                      key={child.link}
                       active={child.active}
                       className="min-w-52"
                       asChild
                     >
-                      <a href={child.link}>{child.name}</a>
+                      <div>
+                        {}
+                        <a href={child.link}>{child.name}</a>
+                      </div>
                     </NavigationMenuLink>
                   ))}
                 </NavigationMenuContent>

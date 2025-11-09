@@ -1,4 +1,5 @@
 ---
+import { buttonVariants } from "@/components/ui/button";
 import MarkdownLayout from "@/layouts/markdown-layout.astro";
 import RootLayout from "@/layouts/root-layout.astro";
 import { formatDate } from "@/lib/utils";
@@ -25,7 +26,11 @@ const { Content } = await entry.render();
     <Content />
   </MarkdownLayout>
   <br />
-  <a slot="footer-button" href="/blog" class="btn btn-primary">
+  <a
+    slot="footer-button"
+    href="/blog"
+    class={buttonVariants({ variant: "secondary", size: "lg" })}
+  >
     Return to Blog
   </a>
 </RootLayout>
