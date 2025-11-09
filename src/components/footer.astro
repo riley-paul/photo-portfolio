@@ -1,8 +1,10 @@
 ---
 import { contacts } from "@/lib/config";
+import { cn } from "@/lib/utils";
+import { buttonVariants } from "./ui/button";
 ---
 
-<div
+<footer
   class="w-full flex flex-col gap-8 flex-wrap items-center justify-center pb-8 pt-12 sm:pt-28"
   id="contact"
 >
@@ -16,7 +18,7 @@ import { contacts } from "@/lib/config";
             href={i.link}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn btn-link btn-sm link-hover underline-offset-4 font-normal"
+            class={cn(buttonVariants({ variant: "link", size: "sm" }))}
           >
             {i.name}
           </a>
@@ -27,4 +29,4 @@ import { contacts } from "@/lib/config";
       &copy; {new Date().getFullYear()} Riley Paul
     </div>
   </div>
-</div>
+</footer>

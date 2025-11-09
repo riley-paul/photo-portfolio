@@ -9,7 +9,7 @@ export type Album = CollectionEntry<"albums"> & {
 export type Link = {
   name: string;
   link: string;
-  active: (pathname: string) => boolean;
+  active: boolean;
   icon?: LucideIcon;
   children?: Link[];
 };
