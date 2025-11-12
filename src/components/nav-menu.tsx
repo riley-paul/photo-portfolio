@@ -11,7 +11,7 @@ import {
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
 
-import React, { createElement } from "react";
+import React from "react";
 
 type Props = { links: Link[] };
 
