@@ -2,11 +2,8 @@ import type { CollectionEntry } from "astro:content";
 import React from "react";
 import {
   Item,
-  ItemActions,
   ItemContent,
   ItemDescription,
-  ItemFooter,
-  ItemHeader,
   ItemMedia,
   ItemTitle,
 } from "@/components/ui/item";
@@ -18,7 +15,7 @@ const BlogCard: React.FC<Props> = ({ blogEntry }) => {
   return (
     <Item asChild>
       <a href={`/blog/${blogEntry.slug}`}>
-        <ItemMedia variant="image">
+        <ItemMedia variant="image" className="h-20 w-auto">
           <img
             {...blogEntry.data.cover}
             alt="cover photo"
@@ -26,7 +23,7 @@ const BlogCard: React.FC<Props> = ({ blogEntry }) => {
           />
         </ItemMedia>
         <ItemContent>
-          <ItemTitle>{blogEntry.data.title}</ItemTitle>
+          <ItemTitle className="font-bold">{blogEntry.data.title}</ItemTitle>
           <ItemDescription>{formatDate(blogEntry.data.date)}</ItemDescription>
         </ItemContent>
       </a>
