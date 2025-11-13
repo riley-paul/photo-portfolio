@@ -161,7 +161,7 @@ function NavigationMenuIndicator({
       )}
       {...props}
     >
-      <div className="bg-primary/50 relative h-0.5 w-full mt-1" />
+      <div className="bg-secondary-foreground relative h-0.5 w-full mt-1" />
     </NavigationMenuPrimitive.Indicator>
   );
 }
