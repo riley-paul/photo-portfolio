@@ -19,10 +19,7 @@ function NavigationMenu({
     <NavigationMenuPrimitive.Root
       data-slot="navigation-menu"
       data-viewport={viewport}
-      className={cn(
-        "group/navigation-menu relative flex max-w-max flex-1 items-center justify-center",
-        className,
-      )}
+      className={cn("relative", className)}
       {...props}
     >
       {children}
@@ -38,10 +35,7 @@ function NavigationMenuList({
   return (
     <NavigationMenuPrimitive.List
       data-slot="navigation-menu-list"
-      className={cn(
-        "group flex flex-1 list-none items-center justify-center gap-1",
-        className,
-      )}
+      className={cn("flex list-none items-center gap-1", className)}
       {...props}
     />
   );
@@ -54,7 +48,7 @@ function NavigationMenuItem({
   return (
     <NavigationMenuPrimitive.Item
       data-slot="navigation-menu-item"
-      className={cn("relative", className)}
+      className={cn(className)}
       {...props}
     />
   );
@@ -161,12 +155,13 @@ function NavigationMenuIndicator({
     <NavigationMenuPrimitive.Indicator
       data-slot="navigation-menu-indicator"
       className={cn(
-        "data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in top-full z-1 flex h-1.5 items-end justify-center overflow-hidden",
+        "data-[state=visible]:animate-in data-[state=hidden]:animate-out data-[state=hidden]:fade-out data-[state=visible]:fade-in",
+        "absolute top-full left-0 z-10 flex items-end justify-center overflow-visible transition-[width,transform] duration-200 ease-out",
         className,
       )}
       {...props}
     >
-      <div className="bg-border relative top-[60%] h-2 w-2 rotate-45 rounded-tl-sm shadow-md" />
+      <div className="bg-border h-0.5 w-full rounded-full" />
     </NavigationMenuPrimitive.Indicator>
   );
 }

@@ -10,14 +10,13 @@ import {
   navigationMenuTriggerStyle,
   NavigationMenuViewport,
 } from "@/components/ui/navigation-menu";
-
 import React from "react";
 
 type Props = { links: Link[] };
 
 const NavMenu: React.FC<Props> = ({ links }) => {
   return (
-    <NavigationMenu>
+    <NavigationMenu viewport>
       <NavigationMenuList>
         {links.map((link) => {
           if (link.children)
@@ -31,7 +30,7 @@ const NavMenu: React.FC<Props> = ({ links }) => {
                     <NavigationMenuLink
                       key={child.link}
                       active={child.active}
-                      className="min-w-52"
+                      className="min-w-64 truncate"
                       asChild
                     >
                       <div>
