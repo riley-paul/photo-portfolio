@@ -30,7 +30,7 @@ const NavMenu: React.FC<Props> = ({ links }) => {
                     <NavigationMenuLink
                       key={child.link}
                       active={child.active}
-                      className="min-w-64 truncate"
+                      className="min-w-72 truncate"
                       asChild
                     >
                       <div>
