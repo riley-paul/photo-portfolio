@@ -33,10 +33,7 @@ const NavMenu: React.FC<Props> = ({ links }) => {
                       className="min-w-72 truncate"
                       asChild
                     >
-                      <div>
-                        {}
-                        <a href={child.link}>{child.name}</a>
-                      </div>
+                      <a href={child.link}>{child.name}</a>
                     </NavigationMenuLink>
                   ))}
                 </NavigationMenuContent>
