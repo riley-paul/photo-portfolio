@@ -1,8 +1,9 @@
 ---
 import MarkdownLayout from "@/layouts/markdown-layout.astro";
-import Gallery from "../../components/Gallery.jsx";
+import Gallery from "@/components/image-gallery.js";
 import RootLayout from "@/layouts/root-layout.astro";
 import { getAlbums } from "@/lib/helpers";
+import { buttonVariants } from "@/components/ui/button";
 
 export async function getStaticPaths() {
   const albums = await getAlbums();
@@ -21,7 +22,11 @@ const { album } = Astro.props;
   </MarkdownLayout>
   <Gallery images={album.photos} name={album.data.name} client:load />
   <br />
-  <a href="/" slot="footer-button" class="btn btn-primary">
+  <a
+    href="/"
+    slot="footer-button"
+    class={buttonVariants({ variant: "secondary", size: "lg" })}
+  >
     Return to Portfolio
   </a>
 </RootLayout>
